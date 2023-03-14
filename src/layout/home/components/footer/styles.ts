@@ -11,6 +11,9 @@ export const List = styled('ul', {
   a: {
     fontWeight: 400,
     paddingTop: '0.5rem',
-    display: 'inline-block'
+    display: 'inline-block',
+    '&:hover, &:focus': {
+      color: '$heading'
+    }
   }
 })
