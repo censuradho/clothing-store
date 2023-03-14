@@ -3,6 +3,11 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: [
+      "zwin.io"
+    ]
+  }
 }
 
 module.exports = nextConfig
