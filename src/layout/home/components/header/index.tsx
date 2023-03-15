@@ -3,6 +3,7 @@ import { ButtonIcon } from '@/components/button-icon'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { CartButton } from './components'
 import * as Styles from './styles'
 
 export function Header () {
@@ -30,10 +31,7 @@ export function Header () {
           label="like" 
           icon={{ name: 'heartOutline' }} 
         />
-        <ButtonIcon 
-          label="cart" 
-          icon={{ name: 'bag' }} 
-        />
+        <CartButton />
       </Box>
 
       <Styles.Navigation active={isOpen}>

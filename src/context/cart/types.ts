@@ -19,4 +19,5 @@ export interface CartContextProps {
   onAdd: (value: ProductCartItemAttr) => void
   onRemove: (value: ProductCartItemAttr) => void
   cart: Cart
+  totalProducts: number
 }

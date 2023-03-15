@@ -49,12 +49,23 @@ export function CartProvider ({ children }: PropsWithChildren) {
     
   }
 
+  const totalProducts = Object
+    .entries(cart)
+    .map(([key, value]) => {
+      return Object
+        .entries(value.sizes)
+        .map(([key, value]) => value.quantity)
+        .reduce((prev, next) => prev + next)
+    })
+    .reduce((prev, next) => prev + next, 0)
+
   return (
     <CartContext.Provider
       value={{
         cart,
         onAdd: handleAdd,
         onRemove: handleRemove,
+        totalProducts
       }}
     >
       {children}
