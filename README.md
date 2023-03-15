@@ -1,38 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# clothing store
 
-## Getting Started
+Frontend template made in Next.js of a clothing ecommerce
 
-First, run the development server:
+## Screen shots
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Home
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![screencapture-localhost-3000-2023-03-15-15_08_27](https://user-images.githubusercontent.com/49209628/225403339-885b805f-611f-48de-8737-6d21cb78b875.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Pdp (Product page)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![screencapture-clothing-store-zeta-vercel-app-p-6-FZCSSA-2023-03-15-15_09_10](https://user-images.githubusercontent.com/49209628/225403653-ee9e34df-80b4-4345-b918-c3c34cab7041.png)
+![screencapture-clothing-store-zeta-vercel-app-p-6-FZCSSA-2023-03-15-15_09_31](https://user-images.githubusercontent.com/49209628/225403686-6d409642-f535-40c8-9e07-7d8f4c0c0be1.png)
+![screencapture-clothing-store-zeta-vercel-app-p-6-FZCSSA-2023-03-15-15_09_49](https://user-images.githubusercontent.com/49209628/225403704-e3b6fed3-0e0d-4ba2-b6d5-9b485294dfc3.png)
