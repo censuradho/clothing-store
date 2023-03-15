@@ -13,6 +13,9 @@ import {
 import {
   CgMenuLeft
 } from '@meronex/icons/cg';
+import {
+  IosArrowUp
+} from '@meronex/icons/ios';
 
 export const icons = {
   menuRight: CgMenuRight,
@@ -20,5 +23,6 @@ export const icons = {
   heartOutline: AiTwotoneHeart,
   heart: BsFillHeartFill,
   search: BsSearch,
-  menuLeft: CgMenuLeft
+  menuLeft: CgMenuLeft,
+  arrowUp: IosArrowUp
 }

@@ -1,4 +1,5 @@
 import { Box, Container } from '@/components'
+import { useCart } from '@/context/cart'
 import { Size } from '@/services/types'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
@@ -16,7 +17,26 @@ export function ProductLayout (props: ProductPageProps) {
     data
   } = props
 
+  const { onAdd } = useCart()
+
   const [size, setSize] = useState<Size | null>(null)
+
+  const handleAddToCart = () => {
+    if (!size) return;
+
+    onAdd({
+      id: data.id,
+      name: data.name,
+      price: data.price,
+      sku: data.sku,
+      sizes: {
+        [size?.label]: {
+          ...size,
+          quantity: 1
+        }
+      }
+    })
+  }
 
   return (
     <>
@@ -34,6 +54,7 @@ export function ProductLayout (props: ProductPageProps) {
               />
               <BuyButtons 
                 disabled={!size}
+                onBuy={() => handleAddToCart()}
               />
             </Box>
           </Styles.Content>

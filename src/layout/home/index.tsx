@@ -1,3 +1,4 @@
+import { ButtonScrollTop } from '@/components'
 import dynamic from 'next/dynamic'
 import { AboveFold, Header } from './components'
 import * as Styles from './styles'
@@ -39,11 +40,15 @@ export function HomeLayout (props: HomePageProps) {
     <>
       <Header />
       <Styles.Container>
+
         <AboveFold data={above_fold} />
-        <Category data={collection_banner} />
-        <Arrivals data={arrivals} />
-        <SeasonSale data={season_sale} />
-        <Collections data={collections} />
+        <div>
+          <ButtonScrollTop />
+          <Category data={collection_banner} />
+          <Arrivals data={arrivals} />
+          <SeasonSale data={season_sale} />
+          <Collections data={collections} />
+        </div>
         <Footer />
       </Styles.Container>
     </>
