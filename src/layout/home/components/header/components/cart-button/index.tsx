@@ -3,15 +3,16 @@ import { useCart } from '@/context/cart'
 import * as Styles from './styles'
 
 export function CartButton () {
-  const { totalProducts } = useCart()
+  const { totalProducts, setIsCartOpen } = useCart()
 
   return (
     <Styles.Container>
-      <ButtonIcon 
+      <ButtonIcon
+        onClick={() => setIsCartOpen(true)}
         label="cart" 
         icon={{ name: 'bag' }} 
       />
-      <Styles.Counter>{totalProducts}</Styles.Counter>
+      {totalProducts > 0 && <Styles.Counter>{totalProducts}</Styles.Counter>}
     </Styles.Container>
   )
 }

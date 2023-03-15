@@ -1,4 +1,5 @@
 import { Product, Size } from "@/services/types"
+import { Dispatch, SetStateAction } from "react"
 
 export interface SizeCartItem extends Size {
   quantity: number
@@ -24,7 +25,7 @@ export interface ResumeBuy {
 
 export interface CartContextProps {
   onAdd: (value: ProductCartItemAttr) => void
-  onRemove: (value: ProductCartItemAttr) => void
+  onRemove: (productId: number, sizekey: number | string) => void
   cart: Cart
   totalProducts: number
   resumeBuy?: ResumeBuy
@@ -32,4 +33,6 @@ export interface CartContextProps {
     product: ProductCartItemAttr;
     size: SizeCartItem;
   }>
+  setIsCartOpen: Dispatch<SetStateAction<boolean>>
+
 }

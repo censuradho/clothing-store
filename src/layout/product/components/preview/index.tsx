@@ -36,7 +36,7 @@ export function Preview (props: PreviewProps) {
         />
       </Styles.Figure>
     </div>
-  )), [])
+  )), [data])
 
   const renderDots = useMemo(() => isLoading &&
   [...Array(instanceRef?.current?.track.details.slides.length  || 0)

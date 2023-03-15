@@ -11,8 +11,11 @@ export function CartDialog (props: CartDialogProps) {
     totalProducts,
     resumeBuy,
     cart,
-    cartItems
+    cartItems,
+    onRemove
   } = useCart()
+
+  const hasProducts = cartItems.length > 0
 
   const renderSubTotal = () => {
     if (!resumeBuy?.subTotal) return null
@@ -25,10 +28,26 @@ export function CartDialog (props: CartDialogProps) {
     )
   }
 
+  const renderEmptyMessage = () => {
+    if (hasProducts) return null
+
+    return (
+      <Box 
+        flex={1} 
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+      >
+        <Typography>Não há itens no seu carrinho</Typography>
+      </Box>
+    )
+  }
+
   const renderProducts = cartItems.map((value, index) => (
     <ProductItem
       key={index}
       data={value}
+      onRemove={() => onRemove(value.product.id, value.size.label)}
     />
   ))
   return (
@@ -47,13 +66,18 @@ export function CartDialog (props: CartDialogProps) {
           </Styles.Header>
           <Styles.ScrollView>
             {renderProducts}
+            {renderEmptyMessage()}
           </Styles.ScrollView>
-          <Styles.ResumeView>
-            {renderSubTotal()}
-          </Styles.ResumeView>
-          <Box style={{ padding: '1rem' }} fullWidth>
-            <Button fullWidth>Buy</Button>
-          </Box>
+          {hasProducts && (
+            <Styles.ResumeView>
+              {renderSubTotal()}
+            </Styles.ResumeView>
+          )}
+          {hasProducts && (
+            <Box style={{ padding: '1rem' }} fullWidth>
+              <Button fullWidth>Buy</Button>
+            </Box>
+          )}
         </Styles.Content>
       </Styles.Portal>
     </Styles.Root>

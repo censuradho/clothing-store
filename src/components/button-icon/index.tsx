@@ -11,11 +11,20 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ButtonIconProps>((props,
     ...otherProps
   } = props
 
+  const size = (icon?.size || 13) * 2
+
   return (
     <Styles.Provider>
       <Styles.Root>
         <Styles.Trigger ref={ref} asChild>
-          <Styles.Button aria-label={label} {...otherProps}>
+          <Styles.Button 
+            aria-label={label} 
+            {...otherProps}
+            style={{ 
+              width: size, 
+              height: size 
+            }}
+          >
             <Icon {...icon}  />
           </Styles.Button>
         </Styles.Trigger>

@@ -1,3 +1,5 @@
+import { environments } from '@/constants/environments'
+import { useLocalStorage } from '@/hooks'
 import { PropsWithChildren, createContext, useState, useContext } from 'react'
 import { CartDialog } from './components'
 import { Cart, CartContextProps, ProductCartItemAttr, ResumeBuy } from './types'
@@ -5,7 +7,8 @@ import { Cart, CartContextProps, ProductCartItemAttr, ResumeBuy } from './types'
 const CartContext = createContext({} as CartContextProps)
 
 export function CartProvider ({ children }: PropsWithChildren) {
-  const [cart, setCart] = useState<Cart>({})
+  const [cart, setCart] = useLocalStorage<Cart>(`${environments.appName}:cart`, {})
+  
   const [isCarOpen, setIsCartOpen] = useState(false)
 
   const handleAdd = (payload: ProductCartItemAttr) => {
@@ -49,8 +52,59 @@ export function CartProvider ({ children }: PropsWithChildren) {
     setIsCartOpen(true)
   }
 
-  const handleRemove = (value: ProductCartItemAttr) => {
-    
+  const handleDecrease = (productId: number, sizekey: number) => {
+    setCart(prevState => {
+      const product = prevState[productId];
+
+      if (!product) return prevState;
+
+      const size = product.sizes[sizekey];
+
+      if (!size) return prevState
+
+      if (size.quantity > 0) {
+        const parsedSize = {
+          ...size,
+          quantity: size.quantity - 1
+        }
+
+        return {
+          ...prevState,
+          [productId]: {
+            ...product,
+            sizes: {
+              ...product.sizes,
+              [sizekey]: size
+            }
+          }
+        }
+      }
+
+      delete product.sizes[sizekey];
+
+      return {
+        ...prevState,
+        [productId]: product,
+      };
+    })
+  }
+
+  const handleRemove = (productId: number, sizekey: number | string) => {
+    setCart(prevState => {
+      const product = prevState[productId];
+
+      if (!product) return prevState;
+
+      const size = product.sizes[sizekey];
+
+      if (!size) return prevState
+      delete product.sizes[sizekey];
+
+      return {
+        ...prevState,
+        [productId]: product,
+      };
+    })
   }
 
   const totalProducts = Object
@@ -59,7 +113,7 @@ export function CartProvider ({ children }: PropsWithChildren) {
       return Object
         .entries(value.sizes)
         .map(([key, value]) => value.quantity)
-        .reduce((prev, next) => prev + next)
+        ?.reduce((prev, next) => prev + next, 0)
     })
     .reduce((prev, next) => prev + next, 0)
 
@@ -70,7 +124,7 @@ export function CartProvider ({ children }: PropsWithChildren) {
         const sizesQuantity = Object
           .entries(product.sizes)
           .map(([key, size]) => size.quantity)
-          .reduce((prev, next) => prev + next)
+          ?.reduce((prev, next) => prev + next, 0)
 
         const total = product.price * sizesQuantity
 
@@ -116,6 +170,7 @@ export function CartProvider ({ children }: PropsWithChildren) {
         onRemove: handleRemove,
         totalProducts,
         resumeBuy: resumeBuy(),
+        setIsCartOpen,
         cartItems
       }}
     >

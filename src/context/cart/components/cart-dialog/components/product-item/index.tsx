@@ -1,6 +1,9 @@
 import { Box, Typography } from '@/components'
-import { toLocaleString } from '@/utils/helpers'
+import { ButtonIcon } from '@/components/button-icon'
+import { paths } from '@/constants/routes'
+import { resolvePath, toLocaleString } from '@/utils/helpers'
 import Image from 'next/image'
+import Link from 'next/link'
 import * as Styles from './styles'
 import { ProductItemProps } from './types'
 
@@ -9,7 +12,8 @@ export function ProductItem (props: ProductItemProps) {
     data: {
       product,
       size
-    }
+    },
+    onRemove
   } = props
 
   const renderPrice = () => {
@@ -42,21 +46,34 @@ export function ProductItem (props: ProductItemProps) {
 
   return (
     <Styles.Container>
-      <Styles.Figure>
-        <Image 
-          src={product?.images[0]} 
-          alt="" 
-          fill
-          style={{ objectFit: 'cover' }}
-        />
-      </Styles.Figure>
+      <Link href={resolvePath(paths.product.show, {
+        id: product.id,
+        sku: product.sku
+      })}>
+        <Styles.Figure>
+          <Image 
+            src={product?.images[0]} 
+            alt="" 
+            fill
+            style={{ objectFit: 'cover' }}
+          />
+        </Styles.Figure>
+      </Link>
       <Box flexDirection="column" gap={0.5} flex={1}>
-        <Typography 
-          as="strong" 
-          size="xsm" 
-          color="heading"
-          fontWeight="500"
-        >{product.name}</Typography>
+        <Box gap={0.5}>
+          <Typography 
+            as="strong" 
+            size="xsm" 
+            color="heading"
+            fontWeight="500"
+          >{product.name}</Typography>
+          <ButtonIcon 
+            textHelper="remove"
+            label="remove"
+            icon={{ name: 'close', size: 10 }}
+            onClick={onRemove}
+          />
+        </Box>
         {renderPrice()}
         <Typography 
           size="xsm" 
