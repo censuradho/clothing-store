@@ -712,5 +712,17 @@
         "image": "http://zwin.io/react/stoon/assets/img/collection/5.png"
       } 
     ]
-  }
+  },
+  "pdp": [
+    {
+      "slug": "clothes",
+      "title": "clothes",
+      "products": [1, 2, 3, 4, 5]
+    },
+    {
+      "slug": "shoes",
+      "title": "shoes",
+      "products": [6, 7, 8, 9, 10, 11]
+    }
+  ]
 }
