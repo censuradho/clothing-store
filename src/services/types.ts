@@ -14,6 +14,7 @@ export interface Color {
 
 export interface Product {
   id: number
+  description: string
   is_new?: boolean
   is_sold_out?: boolean
   brand: string

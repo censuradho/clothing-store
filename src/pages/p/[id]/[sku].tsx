@@ -1,3 +1,4 @@
+import { Head } from "@/components"
 import { ProductLayout } from "@/layout/product"
 import { ProductPageProps } from "@/layout/product/types"
 import { productService } from "@/services/produt"
@@ -15,8 +16,15 @@ export const getServerSideProps: GetServerSideProps<ProductPageProps> = async (c
   }
 }
 export default function ProductPage (props: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  
+  const { data } = props
+
   return (
-    <ProductLayout {...props} />
+    <>
+      <Head 
+        title={`${data.name} | Floreza`}
+        description={data.description}
+      />
+      <ProductLayout {...props} />
+    </>
   )
 }

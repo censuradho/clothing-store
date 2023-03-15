@@ -3,11 +3,12 @@ import { ButtonIcon } from '@/components/button-icon'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { CartButton } from './components'
+import { CartButton, Search } from './components'
 import * as Styles from './styles'
 
 export function Header () {
   const [isOpen, setIsOpen] = useState(false)
+  const [isOpenSearchForm, setIsOpenSearchForm] = useState(false)
 
   return (
     <Styles.Container>
@@ -18,6 +19,7 @@ export function Header () {
           onClick={() => setIsOpen(true)}
         />
         <ButtonIcon 
+          onClick={() => setIsOpenSearchForm(true)}
           label="search" 
           icon={{ name: 'search' }} 
         />
@@ -33,13 +35,13 @@ export function Header () {
         />
         <CartButton />
       </Box>
-
       <Styles.Navigation active={isOpen}>
         <Styles.List>
           <li>Home</li>
           <li>Cart</li>
         </Styles.List>
       </Styles.Navigation>
+      <Search open={isOpenSearchForm} />
     </Styles.Container>
   )
 }
