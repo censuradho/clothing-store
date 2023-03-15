@@ -2,11 +2,14 @@ import * as Styles from './styles'
 import { SizeProps } from './types'
 
 export function Sizes (props: SizeProps) {
-  const { data } = props
+  const { data, onSelect, value: current } = props
   
   const renderSizes = data.map((value, index) => (
     <li key={index}>
-      <Styles.Size>{value.label}</Styles.Size>
+      <Styles.Size
+        active={value.label === current?.label} 
+        onClick={() => onSelect?.(value)}
+      >{value.label}</Styles.Size>
     </li>
   ))
 

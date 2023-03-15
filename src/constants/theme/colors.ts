@@ -12,6 +12,7 @@ export const colors = {
   ...ancesst,
   primary: ancesst.ancesst0,
   primaryLight: ancesst.ancesst1,
+  secondary: '#F7C04A',
   tertiary: '#BBE6EC',
   error: '#D61355',
   background: ancesst.ancesst8,

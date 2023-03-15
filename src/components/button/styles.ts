@@ -51,7 +51,7 @@ export const Button = styled('button', {
       },
 
       secondary: {
-        background: '$primaryLight',
+        background: '$secondary',
         padding: '0.7rem 1rem',
         fontWeight: 500,
         borderRadius: '$default',
