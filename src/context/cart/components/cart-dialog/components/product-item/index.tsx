@@ -1,5 +1,5 @@
 import { Box, Typography } from '@/components'
-import { ButtonIcon } from '@/components/button-icon'
+import { ButtonIcon } from '@/components/common/button-icon'
 import { paths } from '@/constants/routes'
 import { resolvePath, toLocaleString } from '@/utils/helpers'
 import Image from 'next/image'

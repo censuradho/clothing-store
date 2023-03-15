@@ -1,4 +1,4 @@
-import { IconProps } from "@/components/icon/types";
+import { IconProps } from "@/components/common/icon/types";
 import { ButtonHTMLAttributes } from 'react'
 
 type RootButtonProps = Pick<ButtonHTMLAttributes<HTMLButtonElement>,

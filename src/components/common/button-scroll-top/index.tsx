@@ -1,6 +1,6 @@
 import { useDebounceCallback, useEventListener } from '@/hooks'
 import { useRef, useState } from 'react';
-import { Icon } from '../icon';
+import { Icon } from '@/components/common';
 import * as Styles from './styles'
 
 export function ButtonScrollTop () {

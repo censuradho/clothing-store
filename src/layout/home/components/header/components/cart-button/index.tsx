@@ -1,4 +1,4 @@
-import { ButtonIcon } from '@/components/button-icon'
+import { ButtonIcon } from '@/components/common/button-icon'
 import { useCart } from '@/context/cart'
 import * as Styles from './styles'
 

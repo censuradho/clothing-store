@@ -2,7 +2,9 @@ import { styled } from 'stitches.config'
 
 export const Container = styled('main', {
   width: '100%',
-  padding: '2rem 0'
+  '@laptops-min': {
+    padding: '2rem 0'
+  }
 })
 
 export const Content = styled('div', {

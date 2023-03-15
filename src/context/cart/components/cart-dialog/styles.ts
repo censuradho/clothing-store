@@ -28,7 +28,7 @@ export const Content = styled(Dialog.Content, {
   top: '0',
   right: '0',
   width: '100%',
-  height: '100vh',
+  height: '100%',
   zIndex: 11,
   animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
   '&:focus': { outline: 'none' },
@@ -40,7 +40,6 @@ export const Content = styled(Dialog.Content, {
 });
 
 export const Header = styled('div', {
-
   height: '65px',  
   padding: '0 1rem',
   borderBottom: '1px solid $border',

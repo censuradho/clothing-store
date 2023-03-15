@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@/components'
-import { ButtonIcon } from '@/components/button-icon'
+import { ButtonIcon } from '@/components/common/button-icon'
 import { toLocaleString } from '@/utils/helpers'
 import { useCart } from '../..'
 import { ProductItem } from './components'
@@ -38,7 +38,7 @@ export function CartDialog (props: CartDialogProps) {
         alignItems="center"
         flexDirection="column"
       >
-        <Typography>Não há itens no seu carrinho</Typography>
+        <Typography textAlign="center">There are no products in your shopping cart</Typography>
       </Box>
     )
   }

@@ -1,5 +1,6 @@
-import { ButtonScrollTop } from '@/components'
 import dynamic from 'next/dynamic'
+
+import { ButtonScrollTop } from '@/components'
 import { AboveFold, Header } from './components'
 import * as Styles from './styles'
 import { HomePageProps } from './types'
