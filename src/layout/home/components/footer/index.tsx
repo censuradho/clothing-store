@@ -119,7 +119,8 @@ export function Footer () {
       </Styles.Container>
       <Container size="lg">
         <Box marginTop={3} marginBottom={3}>
-          <Typography size="xsm">© Floreza {new Date().getFullYear()}. Powered with 🧡  by Censuradho.</Typography>
+          <Typography size="xsm">
+            © Floreza {new Date().getFullYear()}. Powered with 🧡  by <a target="_blank" rel="noreferrer" href="https://github.com/censuradho">Censuradho</a>.</Typography>
         </Box>
       </Container>
     </>
