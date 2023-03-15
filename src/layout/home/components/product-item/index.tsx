@@ -1,4 +1,4 @@
-import { Typography } from '@/components'
+import { Tag, Typography } from '@/components'
 import { paths } from '@/constants/routes'
 import { resolvePath, toLocaleString } from '@/utils/helpers'
 import Image from 'next/image'
@@ -27,7 +27,7 @@ export function ProductItem (props: ProductItemProps) {
     const discount = promotion.value * 100
 
     return (
-      <Styles.Tag style={{ background: '#a29bfe' }}>{`sale ${discount}%`}</Styles.Tag>
+      <Tag variant="discount">{`sale ${discount}%`}</Tag>
     )
   }
 

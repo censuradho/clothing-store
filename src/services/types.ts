@@ -9,7 +9,7 @@ export interface Size {
 }
 
 export interface Color {
-  value: string
+  color: string
 }
 
 export interface Product {

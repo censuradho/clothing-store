@@ -13,8 +13,8 @@ export default function handler (req: NextApiRequest, res: NextApiResponse) {
 
     const products = db.products.filter(value => 
       tranding
-      .productIds
-      .includes(value.id)
+        .productIds
+        .includes(value.id)
     )
 
     return {
