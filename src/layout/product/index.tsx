@@ -29,6 +29,8 @@ export function ProductLayout (props: ProductPageProps) {
       name: data.name,
       price: data.price,
       sku: data.sku,
+      promotion: data.promotion,
+      images: data.images,
       sizes: {
         [size?.label]: {
           ...size,

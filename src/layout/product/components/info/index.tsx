@@ -25,7 +25,7 @@ export function Info (props: InfoProps) {
   const renderPromotion = () => {
     if (!promotion.value) return null
 
-    const realPrice  = price * promotion.value
+    const realPrice  = price - (price * promotion.value)
 
     return (
       <Box flexDirection="column" gap={0.5}>

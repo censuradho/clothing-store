@@ -30,7 +30,7 @@ export const Button = styled('button', {
       primary: {
         background: '$primary',
         padding: '0.7rem 1.4rem',
-        border: '1px solid transparent',
+        border: '2px solid transparent',
         textTransform: 'uppercase',
         letterSpacing: '0.05rem',
 
@@ -41,12 +41,9 @@ export const Button = styled('button', {
           color: '$background',
           fontWeight: 600
         },
-        '&:hover': {
-          background: '$ancesst8',
-          
-          '> *': {
-            color: '$ancesst0',
-          },
+        '&:hover, &:focus': {
+          background: '$ancesst4',
+          border: '2px solid $ancesst0'
         },
       },
 
