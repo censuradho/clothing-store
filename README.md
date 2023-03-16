@@ -1,6 +1,6 @@
 # clothing store
 
-Frontend template made in Next.js of a clothing ecommerce
+Frontend Ecommerce template made in Next.js
 
 ## Screen shots
 
