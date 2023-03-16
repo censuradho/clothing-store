@@ -1,5 +1,6 @@
 import { Box } from '@/components'
 import { ButtonIcon } from '@/components/common/button-icon'
+import { paths } from '@/constants/routes'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -34,9 +35,27 @@ export function Header () {
         <CartButton />
       </Box>
       <Styles.Navigation active={isOpen}>
-        <Styles.List>
-          <li>Home</li>
-          <li>Cart</li>
+        <Styles.NavHeader>
+          <Box flex={1} justifyContent="center" alignItems="center">
+            <Image src="/logo.svg" alt="logo" width={70} height={70} style={{ objectFit: 'contain' }} />
+          </Box>
+          <ButtonIcon
+            onClick={() => setIsOpen(false)}
+            label="close"
+            icon={{ name: 'close' }}
+          />
+        </Styles.NavHeader>
+        <Styles.List onClick={() => setIsOpen(false)}>
+          <li>
+            <Link href={paths.home}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href={paths.home}>
+              Cart
+            </Link>
+          </li>
         </Styles.List>
       </Styles.Navigation>
     </Styles.Container>

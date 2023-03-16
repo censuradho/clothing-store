@@ -14,6 +14,15 @@ export const Container = styled('header', {
   zIndex: 10
 })
 
+export const NavHeader = styled('div', {
+  width: '100%',
+  height: '65px',
+  borderBottom: '1px solid $border',
+  padding: '1rem',
+  display: 'flex',
+  alignItems: 'center'
+})
+
 export const Navigation = styled('nav', {
   width: '100%',
   height: '100vh',
@@ -35,5 +44,14 @@ export const Navigation = styled('nav', {
 })
 
 export const List = styled('ul', {
-  
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem',
+  padding: '1rem',
+  listStyle: 'none',
+  a: {
+    fontSize: '$sm',
+    textTransform: 'uppercase',
+    fontWeight: 400
+  }
 })
