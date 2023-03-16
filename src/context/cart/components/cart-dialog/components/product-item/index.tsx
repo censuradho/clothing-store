@@ -60,7 +60,7 @@ export function ProductItem (props: ProductItemProps) {
         </Styles.Figure>
       </Link>
       <Box flexDirection="column" gap={0.5} flex={1}>
-        <Box gap={0.5} alignItems="flexStart">
+        <Box gap={0.5} alignItems="flexStart" justifyContent="space-between">
           <Typography 
             as="strong" 
             size="xsm" 
