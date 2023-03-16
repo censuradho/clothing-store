@@ -8,7 +8,8 @@ const CartContext = createContext({} as CartContextProps)
 
 export function CartProvider ({ children }: PropsWithChildren) {
   const [cart, setCart] = useLocalStorage<Cart>(`${environments.appName}:cart`, {})
-  
+  const [likes, setLikes] = useLocalStorage<number[]>(`${environments.appName}:likes`, [])
+
   const [isCarOpen, setIsCartOpen] = useState(false)
 
   const handleAdd = (payload: ProductCartItemAttr) => {
@@ -107,6 +108,22 @@ export function CartProvider ({ children }: PropsWithChildren) {
     })
   }
 
+  const handleToggleLike = (productId: number) => {
+    setLikes(prevState => {
+      const isLiked = prevState.includes(productId)
+
+      if (isLiked) return [
+        ...prevState.filter(value => value !== productId)
+      ]
+
+      return [
+        ...prevState,
+        productId
+      ]
+      
+    })
+  }
+  
   const totalProducts = Object
     .entries(cart)
     .map(([key, value]) => {
@@ -170,6 +187,8 @@ export function CartProvider ({ children }: PropsWithChildren) {
         onRemove: handleRemove,
         totalProducts,
         resumeBuy: resumeBuy(),
+        onToggleLike: handleToggleLike,
+        likes,
         setIsCartOpen,
         cartItems
       }}

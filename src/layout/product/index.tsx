@@ -4,7 +4,7 @@ import { Size } from '@/services/types'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { Header } from '../home/components'
-import { Colors, Info, Preview, Sizes } from './components'
+import { Colors, Description, Info, Preview, Sizes } from './components'
 import * as Styles from './styles'
 import { ProductPageProps } from './types'
 
@@ -54,6 +54,8 @@ export function ProductLayout (props: ProductPageProps) {
                 data={data.sizes} 
                 onSelect={setSize}
               />
+              <Colors data={data} />
+              <Description data={data} />
               <BuyButtons 
                 disabled={!size}
                 onBuy={() => handleAddToCart()}

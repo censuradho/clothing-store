@@ -26,6 +26,7 @@ export interface ResumeBuy {
 export interface CartContextProps {
   onAdd: (value: ProductCartItemAttr) => void
   onRemove: (productId: number, sizekey: number | string) => void
+  onToggleLike: (productId: number) => void
   cart: Cart
   totalProducts: number
   resumeBuy?: ResumeBuy
@@ -33,6 +34,6 @@ export interface CartContextProps {
     product: ProductCartItemAttr;
     size: SizeCartItem;
   }>
+  likes: number[]
   setIsCartOpen: Dispatch<SetStateAction<boolean>>
-
 }

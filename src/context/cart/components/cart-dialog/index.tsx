@@ -38,7 +38,7 @@ export function CartDialog (props: CartDialogProps) {
         alignItems="center"
         flexDirection="column"
       >
-        <Typography textAlign="center">There are no products in your shopping cart</Typography>
+        <Typography textAlign="center" size="xsm">There are no products in your shopping cart</Typography>
       </Box>
     )
   }

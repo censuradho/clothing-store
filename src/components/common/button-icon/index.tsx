@@ -11,8 +11,6 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ButtonIconProps>((props,
     ...otherProps
   } = props
 
-  const size = (icon?.size || 13) * 2
-
   return (
     <Styles.Provider>
       <Styles.Root>
@@ -20,9 +18,9 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ButtonIconProps>((props,
           <Styles.Button 
             aria-label={label} 
             {...otherProps}
-            style={{ 
-              width: size, 
-              height: size 
+            style={{
+              width: (icon?.size || 25) + 5,
+              height: (icon?.size || 25) + 5,
             }}
           >
             <Icon {...icon}  />

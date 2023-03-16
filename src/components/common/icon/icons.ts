@@ -8,9 +8,9 @@ import {
 } from '@meronex/icons/bs';
 import { CgMenuLeft, CgMenuRight } from '@meronex/icons/cg';
 import {
+  IosArrowDown,
   IosArrowUp
 } from '@meronex/icons/ios';
-
 
 export const icons = {
   menuRight: CgMenuRight,
@@ -20,5 +20,6 @@ export const icons = {
   search: BsSearch,
   menuLeft: CgMenuLeft,
   arrowUp: IosArrowUp,
+  arrowDown: IosArrowDown,
   close: AiOutlineClose
 }

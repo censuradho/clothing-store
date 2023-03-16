@@ -60,7 +60,7 @@ export function ProductItem (props: ProductItemProps) {
         </Styles.Figure>
       </Link>
       <Box flexDirection="column" gap={0.5} flex={1}>
-        <Box gap={0.5}>
+        <Box gap={0.5} alignItems="flexStart">
           <Typography 
             as="strong" 
             size="xsm" 
@@ -70,7 +70,7 @@ export function ProductItem (props: ProductItemProps) {
           <ButtonIcon 
             textHelper="remove"
             label="remove"
-            icon={{ name: 'close', size: 10 }}
+            icon={{ name: 'close', size: 15 }}
             onClick={onRemove}
           />
         </Box>
