@@ -11,7 +11,7 @@ export const Figure = styled('figure', {
 
   '@table-min': {
     width: '400px',
-    height: '500px',
+    height: '400px',
   }
 })
 

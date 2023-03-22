@@ -10,6 +10,10 @@ const CartProvider = dynamic(() => import('@/context/cart').then(t => t.CartProv
   ssr: false
 })
 
+const Newsletter = dynamic(() => import('@/components/common').then(t => t.Newsletter), {
+  ssr: false
+})
+
 export default function MyApp ({ Component, pageProps }: AppProps) {
   useEffect(() => {
     globalStyle()
@@ -17,6 +21,7 @@ export default function MyApp ({ Component, pageProps }: AppProps) {
 
   return (
     <CartProvider>
+      <Newsletter />
       <Component {...pageProps} />
     </CartProvider>
   )

@@ -1,5 +1,5 @@
 import {
-  AiOutlineClose, AiTwotoneHeart
+  AiOutlineClose, AiOutlineQuestionCircle, AiTwotoneHeart
 } from '@meronex/icons/ai';
 import {
   BsBag,
@@ -21,5 +21,6 @@ export const icons = {
   menuLeft: CgMenuLeft,
   arrowUp: IosArrowUp,
   arrowDown: IosArrowDown,
-  close: AiOutlineClose
+  close: AiOutlineClose,
+  question: AiOutlineQuestionCircle
 }

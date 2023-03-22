@@ -30,7 +30,7 @@ export function Arrivals (props: ArrivalsProps) {
       },
       [breakpoints["laptops-min"]]: {
         slides: {
-          spacing: 10,
+          spacing: 20,
           perView: 4.2
         }
       }
