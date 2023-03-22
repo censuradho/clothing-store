@@ -25,8 +25,10 @@ export const Overlay = styled(Dialog.Overlay, {
   position: 'fixed',
   inset: 0,
   animation: `${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
-  backdropFilter: 'blur(6px)'
+  backdropFilter: 'blur(6px)',
+  zIndex: 88,
 });
+
 
 export const Content = styled(Dialog.Content, {
   backgroundColor: '#fff',
@@ -42,7 +44,8 @@ export const Content = styled(Dialog.Content, {
   animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
   '&:focus': { outline: 'none' },
   overflow: 'hidden',
-  display: 'flex'
+  display: 'flex',
+  zIndex: 88,
 });
 
 export const Figure = styled('figure', {
@@ -55,7 +58,22 @@ export const Figure = styled('figure', {
 })
 
 export const FormView = styled('div', {
-  padding: '1rem'
+  padding: '1rem',
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  gap: '1rem'
 })
 
-export const Form = styled('form', {})
+export const Form = styled('form', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem'
+})
+
+export const ButtonIconView = styled('div', {
+  position: 'absolute',
+  top: '20px',
+  right: '20px'
+})

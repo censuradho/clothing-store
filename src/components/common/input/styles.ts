@@ -16,9 +16,8 @@ export const Container = styled("div", {
 });
 
 export const Input = styled("input", {
-  border: 'none',
-  borderBottom: '2px solid transparent',
-  background: '$foreground',
+  border: '1px solid $border',
+  borderRadius: '6px',
   width: "100%",
   height: "3rem",
   outline: "none",
